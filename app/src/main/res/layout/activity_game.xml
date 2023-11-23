@@ -1,45 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="20dp" >
 
-    <Button
-        android:id="@+id/placeStoneButton"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Place Stone">
-    </Button>
-    <!--
-        <Button
-            android:id="@+id/onRotationSensorButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="On Rotation">
+        android:text="자이로 테스트"
+        android:textSize="20dp" />
+    <Button
+        android:id="@+id/eventTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이벤트 받기"
+        android:textSize="20dp" />
+    <Button
+        android:id="@+id/eventTestExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이벤트 안받기"
+        android:textSize="20dp" />
 
-        </Button>
-
-        <Button
-            android:id="@+id/offRotationSensorButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Off Rotation">
-
-        </Button>
-        -->
-
-
-        <GridView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/gridView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numColumns="6"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:horizontalSpacing="8dp"
-            android:verticalSpacing="8dp"
-            android:background="#F0F0F0"/>
-
-    </LinearLayout>
+</LinearLayout>
