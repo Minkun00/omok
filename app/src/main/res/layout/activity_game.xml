@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:padding="20dp" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/winnerNameEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="자이로 테스트"
-        android:textSize="20dp" />
-    <Button
-        android:id="@+id/eventTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="이벤트 받기"
-        android:textSize="20dp" />
-    <Button
-        android:id="@+id/eventTestExit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="이벤트 안받기"
-        android:textSize="20dp" />
+        android:hint="Enter Winner's Name" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/endGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/winnerNameEditText"
+        android:layout_centerHorizontal="true"
+        android:text="End Game" />
+</RelativeLayout>

@@ -33,8 +33,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addOrUpdatePlayerScore(String playerName, int newScore) {
+    public void addOrUpdatePlayerScore(String playerName) {
         SQLiteDatabase db = this.getWritableDatabase();
+
+        // 현재 점수를 조회합니다.
+        Cursor cursor = db.query("PlayerScores", new String[]{"score"}, "playerName = ?", new String[]{playerName}, null, null, null);
+        int currentScore = 0;
+        if (cursor.moveToFirst()) {
+            currentScore = cursor.getInt(cursor.getColumnIndex("score"));
+        }
+        cursor.close();
+
+        // 새로운 점수 값
+        int newScore = currentScore + 1;
 
         ContentValues values = new ContentValues();
         values.put("playerName", playerName);
