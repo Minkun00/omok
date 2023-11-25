@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         leaderBoardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LeaderboardActivity.class);
+                Intent intent = new Intent(MainActivity.this, VictoryActivity.class);
                 startActivity(intent);
 
             }
