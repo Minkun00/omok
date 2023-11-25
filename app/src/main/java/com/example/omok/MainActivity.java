@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button startButton;
+    Button leaderBoardButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         startButton = findViewById(R.id.startButton);
+        leaderBoardButton = findViewById(R.id.leaderboardButton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
+        });
+
+        leaderBoardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LeaderboardActivity.class);
+                startActivity(intent);
+
+            }
         });
     }
 }
