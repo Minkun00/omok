@@ -63,13 +63,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<PlayerScore> scores = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
+
         Cursor cursor = db.query("PlayerScores", new String[]{"playerName", "wins", "losses"}, null, null, null, null, "wins DESC, losses ASC");
         if (cursor.moveToFirst()) {
+            int playerNameIndex = cursor.getColumnIndex("playerName");
+            int winsIndex = cursor.getColumnIndex("wins");
+            int lossesIndex = cursor.getColumnIndex("losses");
+
             do {
-                String playerName = cursor.getString(cursor.getColumnIndex("playerName"));
-                int wins = cursor.getInt(cursor.getColumnIndex("wins"));
-                int losses = cursor.getInt(cursor.getColumnIndex("losses"));
-                scores.add(new PlayerScore(playerName, wins, losses));
+                if (playerNameIndex >= 0 && winsIndex >= 0 && lossesIndex >= 0) {
+                    // 열이 존재하면 안전하게 값 가져오기
+                    String playerName = cursor.getString(playerNameIndex);
+                    int wins = cursor.getInt(winsIndex);
+                    int losses = cursor.getInt(lossesIndex);
+                    scores.add(new PlayerScore(playerName, wins, losses));
+                }
             } while (cursor.moveToNext());
         }
         cursor.close();
